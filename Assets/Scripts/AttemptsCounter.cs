@@ -7,11 +7,14 @@ using UnityEngine.SceneManagement;
 public class AttemptsCounter : MonoBehaviour
 {
     public string prefsname;
+    public string HSprefsname;
     public Text AttemptsText;
+    public Text HighScore;
     // Start is called before the first frame update
     void Start()
     {
         prefsname = SceneManager.GetActiveScene().name;
+        HSprefsname = "HS" + SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -19,8 +22,8 @@ public class AttemptsCounter : MonoBehaviour
     {
         
            AttemptsText.text = "Attempt #" + PlayerPrefs.GetInt(prefsname, 0).ToString();
-         
-       
-     
+        HighScore.text = "High Score: " + PlayerPrefs.GetFloat(HSprefsname, 0).ToString()+"%";
+
+
     }
 }

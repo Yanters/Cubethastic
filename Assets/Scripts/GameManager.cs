@@ -12,16 +12,22 @@ public class GameManager : MonoBehaviour
 
 
     int SaveAttempt;
-
+    float HSSaveAttempt;
+    public Score sc;
     public GameObject CompleteLevelUI;
     public GameObject AC;
     public string prefsname;
-
+    public string HSprefsname;
     void Start()
     {
         prefsname = SceneManager.GetActiveScene().name;
         
         int SaveAttempt = PlayerPrefs.GetInt(prefsname);
+
+        HSprefsname = "HS" + SceneManager.GetActiveScene().name;
+
+        float HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
+        
     }
 
 
@@ -29,11 +35,21 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(prefsname, 1);
         SaveAttempt = PlayerPrefs.GetInt(prefsname);
+
+        PlayerPrefs.SetFloat(HSprefsname, 0);
+        HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
     }
     public void AttemptUpdate()
     {
         SaveAttempt = PlayerPrefs.GetInt(prefsname) + 1;
         PlayerPrefs.SetInt(prefsname, SaveAttempt);
+
+        
+    }
+    public void HighScoreUpdate()
+    {
+        HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname) + 1; /// Problem brak aktualizacji postępu nie bierze ze skryptu
+        PlayerPrefs.SetFloat(HSprefsname, HSSaveAttempt);
     }
 
     public void GameOver()
@@ -52,6 +68,7 @@ public class GameManager : MonoBehaviour
     void RestartGame()
     {
         AttemptUpdate();
+        HighScoreUpdate();
         Debug.Log("RESTART");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

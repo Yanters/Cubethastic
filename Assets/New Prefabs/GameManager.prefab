@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDelay: 1
+  sc: {fileID: 2699162385563866857, guid: e799db2d03b496f49b3e6823ac0a0e76, type: 3}
   CompleteLevelUI: {fileID: 5242959203717815896, guid: d74bd7990fcb6464999a1932b8614b7d, type: 3}
   AC: {fileID: 4147415582020144051, guid: bc4a7bc9a2394ff4a92cf6cef1bceafc, type: 3}
+  prefsname: 
+  HSprefsname: 
