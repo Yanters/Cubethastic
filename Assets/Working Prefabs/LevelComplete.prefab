@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 537513434829978154}
   - component: {fileID: 537513434829978157}
   - component: {fileID: 537513434829978156}
+  - component: {fileID: 4366716361679857888}
   m_Layer: 5
   m_Name: LevelComplete
   m_TagString: Untagged
@@ -110,6 +111,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416f39c502d25364abe729c90a24eac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 3993551307699277738, guid: c120002f7b0cd4f4790599cd075bb318, type: 3}
+--- !u!114 &4366716361679857888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537513434829978152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebf8e0f4e75d634c924a247d10050ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RestartDelay: 1
+  CompleteLevelUI: {fileID: 537513434829978152}
+  AC: {fileID: 5870405745432878658, guid: 4a532d00547c5bb4280abeec8d466f9e, type: 3}
+  prefsname: 
 --- !u!1 &537513435599792918
 GameObject:
   m_ObjectHideFlags: 0

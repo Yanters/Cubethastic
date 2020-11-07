@@ -944,6 +944,10 @@ PrefabInstance:
       propertyPath: EndingPoint
       value: 
       objectReference: {fileID: 9188424597269583386}
+    - target: {fileID: 144800658917443345, guid: b290f669465c3c44b9254d90038876b5, type: 3}
+      propertyPath: GM
+      value: 
+      objectReference: {fileID: 1390594694}
     - target: {fileID: 144800660111149842, guid: b290f669465c3c44b9254d90038876b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

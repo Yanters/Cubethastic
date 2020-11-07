@@ -15,27 +15,25 @@ public class GameManager : MonoBehaviour
 
     public GameObject CompleteLevelUI;
     public GameObject AC;
+    public string prefsname;
 
     void Start()
     {
+        prefsname = SceneManager.GetActiveScene().name;
         
-        //PlayerPrefs.SetInt("Attempt", 1); // fuck logic
-        int SaveAttempt = PlayerPrefs.GetInt("Attempt");
+        int SaveAttempt = PlayerPrefs.GetInt(prefsname);
     }
-    //void Update()
-    //{
-    //    if(CompleteLevelUI.)
-    //}
+
 
     public void AttemptReset()
     {
-        PlayerPrefs.SetInt("Attempt", 1);
-        SaveAttempt = PlayerPrefs.GetInt("Attempt");
+        PlayerPrefs.SetInt(prefsname, 1);
+        SaveAttempt = PlayerPrefs.GetInt(prefsname);
     }
     public void AttemptUpdate()
     {
-        SaveAttempt = PlayerPrefs.GetInt("Attempt") + 1;
-        PlayerPrefs.SetInt("Attempt", SaveAttempt);
+        SaveAttempt = PlayerPrefs.GetInt(prefsname) + 1;
+        PlayerPrefs.SetInt(prefsname, SaveAttempt);
     }
 
     public void GameOver()
@@ -47,7 +45,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GAME OVER");
             Invoke("RestartGame", RestartDelay);
             
-            //RestartGame();
+            
         }
     }
 
@@ -60,8 +58,8 @@ public class GameManager : MonoBehaviour
 
     public void CompleteLevel()
     {
-        
-        AttemptReset();
+
+        //AttemptReset();
         
         Debug.Log("LEVEL COMPLETE WINDOW");
         CompleteLevelUI.SetActive(true);
