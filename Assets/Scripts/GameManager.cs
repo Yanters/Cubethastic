@@ -29,8 +29,11 @@ public class GameManager : MonoBehaviour
         float HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
         
     }
-
-
+    void Update()
+    {
+        //Debug.Log("Procenty: "+sc.scoreProcentage.ToString());
+       
+    }
     public void AttemptReset()
     {
         PlayerPrefs.SetInt(prefsname, 1);
@@ -48,7 +51,13 @@ public class GameManager : MonoBehaviour
     }
     public void HighScoreUpdate()
     {
-        HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname) + 1; /// Problem brak aktualizacji postępu nie bierze ze skryptu
+        if(sc.scoreProcentage> PlayerPrefs.GetFloat(HSprefsname))
+        {
+            HSSaveAttempt = Mathf.Round(sc.scoreProcentage); 
+        }else
+        {
+            HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
+        }
         PlayerPrefs.SetFloat(HSprefsname, HSSaveAttempt);
     }
 
@@ -77,7 +86,7 @@ public class GameManager : MonoBehaviour
     {
 
         //AttemptReset();
-        
+        PlayerPrefs.SetFloat(HSprefsname, 100);
         Debug.Log("LEVEL COMPLETE WINDOW");
         CompleteLevelUI.SetActive(true);
         

@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     public Text scoreText;
     public float scoreProcentage;
     public PlayerCollision PC;
-   
+  
 
   
     // Start is called before the first frame update
@@ -19,6 +19,8 @@ public class Score : MonoBehaviour
     {
        
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -35,6 +37,8 @@ public class Score : MonoBehaviour
             
            
         }
+       
+       
         scoreText.text = scoreProcentage.ToString("0")+"%" ;   
     }
 }
