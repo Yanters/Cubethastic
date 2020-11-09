@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
         prefsname = SceneManager.GetActiveScene().name;
         
         int SaveAttempt = PlayerPrefs.GetInt(prefsname);
+        if(SaveAttempt==0)
+        { SaveAttempt = 1;
+            PlayerPrefs.SetInt(prefsname, SaveAttempt);
+        }
 
         HSprefsname = "HS" + SceneManager.GetActiveScene().name;
 
@@ -39,8 +43,6 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt(prefsname, 1);
         SaveAttempt = PlayerPrefs.GetInt(prefsname);
 
-        PlayerPrefs.SetFloat(HSprefsname, 0);
-        HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
     }
     public void AttemptUpdate()
     {
