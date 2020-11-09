@@ -18,10 +18,12 @@ public class GameManager : MonoBehaviour
     public GameObject AC;
     public string prefsname;
     public string HSprefsname;
+    public string lvlcomplete;
     void Start()
     {
         prefsname = SceneManager.GetActiveScene().name;
-        
+        //lvlcomplete = "lvl" + SceneManager.GetActiveScene().name;
+       // PlayerPrefs.GetInt(lvlcomplete);
         int SaveAttempt = PlayerPrefs.GetInt(prefsname);
         if(SaveAttempt==0)
         { SaveAttempt = 1;
