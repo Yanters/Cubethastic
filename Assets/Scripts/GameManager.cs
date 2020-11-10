@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         prefsname = SceneManager.GetActiveScene().name;
-        //lvlcomplete = "lvl" + SceneManager.GetActiveScene().name;
-       // PlayerPrefs.GetInt(lvlcomplete);
+        lvlcomplete = "lvl" + SceneManager.GetActiveScene().name.ToLower();
+        PlayerPrefs.GetInt(lvlcomplete);
         int SaveAttempt = PlayerPrefs.GetInt(prefsname);
         if(SaveAttempt==0)
         { SaveAttempt = 1;
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     public void CompleteLevel()
     {
 
-        //AttemptReset();
+        PlayerPrefs.SetInt(lvlcomplete,1);
         PlayerPrefs.SetFloat(HSprefsname, 100);
         Debug.Log("LEVEL COMPLETE WINDOW");
         CompleteLevelUI.SetActive(true);
