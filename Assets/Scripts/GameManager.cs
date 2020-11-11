@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     bool GameHasEnded = false;
 
     public float RestartDelay = 1.0f;
-
+    public IsButtonAvalible iba;
 
     int SaveAttempt;
     float HSSaveAttempt;
@@ -19,11 +19,15 @@ public class GameManager : MonoBehaviour
     public string prefsname;
     public string HSprefsname;
     public string lvlcomplete;
+    
     void Start()
     {
         prefsname = SceneManager.GetActiveScene().name;
         lvlcomplete = "lvl" + SceneManager.GetActiveScene().name.ToLower();
         PlayerPrefs.GetInt(lvlcomplete);
+        if (!Cheats.IsOn)
+        { PlayerPrefs.SetInt(lvlcomplete, 1);
+        }
         int SaveAttempt = PlayerPrefs.GetInt(prefsname);
         if(SaveAttempt==0)
         { SaveAttempt = 1;
@@ -89,9 +93,11 @@ public class GameManager : MonoBehaviour
     public void CompleteLevel()
     {
 
-        PlayerPrefs.SetInt(lvlcomplete,1);
+        
         PlayerPrefs.SetFloat(HSprefsname, 100);
         Debug.Log("LEVEL COMPLETE WINDOW");
+        iba.Avalible();
+        //////////////////////////zmiana przycisku
         CompleteLevelUI.SetActive(true);
         
         Debug.Log("LEVEL COMPLETEeeeeeeeeeeeeeeeeeeeeeeeeee WINDOW");

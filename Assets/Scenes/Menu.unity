@@ -381,8 +381,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 183912388}
-        m_TargetAssemblyTypeName: ChooseLevel, Assembly-CSharp
-        m_MethodName: PickLevel
+        m_TargetAssemblyTypeName: MoveToSceneOfText, Assembly-CSharp
+        m_MethodName: ToScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -439,9 +439,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 183912382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9a23b35e2e85c42a2e49c4584c6ec7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0516ccda0d4a29743a4b8f5d05f9c681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IBA: {fileID: 7859291331570051853, guid: 06cebfe0c1e5b84419e09f79231890ae, type: 3}
 --- !u!1 &190041547
 GameObject:
   m_ObjectHideFlags: 0
