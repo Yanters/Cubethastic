@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndingScene : MonoBehaviour
 {
+    // Exiting Application
     public void ExitApplication()
     {
         Debug.Log("QUIT");

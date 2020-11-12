@@ -10,6 +10,7 @@ public class AttemptsCounter : MonoBehaviour
     public string HSprefsname;
     public Text AttemptsText;
     public Text HighScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,12 @@ public class AttemptsCounter : MonoBehaviour
         HSprefsname = "HS" + SceneManager.GetActiveScene().name;
     }
 
-    // Update is called once per frame
+    //Updating Attemp and HighScore
     void Update()
     {
-        
-           AttemptsText.text = "Attempt #" + PlayerPrefs.GetInt(prefsname, 0).ToString();
-        HighScore.text = "High Score: " + PlayerPrefs.GetFloat(HSprefsname, 0).ToString()+"%";
+
+        AttemptsText.text = "Attempt #" + PlayerPrefs.GetInt(prefsname, 0).ToString();
+        HighScore.text = "High Score: " + PlayerPrefs.GetFloat(HSprefsname, 0).ToString() + "%";
 
 
     }

@@ -11,7 +11,7 @@ public class Cheats : MonoBehaviour
 
     private void Start()
     {
-        
+        // After App restart load shadow to button 'Cheats' if it's On
         if (IsOn && transform.name == "Cheats")
         {
             transform.GetComponent<Shadow>().effectColor = new Color32(52, 226, 7, 181);
@@ -21,7 +21,7 @@ public class Cheats : MonoBehaviour
             transform.GetComponent<Shadow>().effectColor = new Color32(75, 75, 75, 90);
         }
     }
-
+    //Putting shadow on the button 'Cheats' Green - ON, Grey = OFF
     public void TurnCheats()
     {
         if(IsOn)
@@ -34,6 +34,7 @@ public class Cheats : MonoBehaviour
         }
         
     }
+    // Swich On/Off
     public void ONOF()
     {
         if(IsOn)
@@ -49,10 +50,5 @@ public class Cheats : MonoBehaviour
         TurnCheats();
         IBA.Avalible();
     }
-    /*
-     var colors = GetComponent<Button> ().colors;
-        colors.normalColor = Color.red;
-        GetComponent<Button> ().colors = colors;
- 
-     */
+   
 }

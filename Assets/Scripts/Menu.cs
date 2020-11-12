@@ -6,6 +6,17 @@ public class Menu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+
+        // Loading top-level 
+        if (PlayerPrefs.GetInt("TopLevel") >= 1)
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("TopLevel"));
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+
+
     }
 }

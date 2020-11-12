@@ -1304,7 +1304,7 @@ PrefabInstance:
     - target: {fileID: 3937671765763279897, guid: 02091fe4d585318418d021fb203b0c4d, type: 3}
       propertyPath: IBA
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7859291331570051853, guid: 06cebfe0c1e5b84419e09f79231890ae, type: 3}
     - target: {fileID: 3937671765763279898, guid: 02091fe4d585318418d021fb203b0c4d, type: 3}
       propertyPath: cheats
       value: 

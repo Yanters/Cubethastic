@@ -5,19 +5,13 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public Transform player;
-    public Vector3 offset ;
-  
+    public Vector3 offset;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    // Camera following player
     void Update()
-    {//transform z małej to odnosi się do obiektu w którym jest skrypt
-        transform.position = player.position+offset;
+    {
+        //transform z małej to odnosi się do obiektu w którym jest skrypt
+        transform.position = player.position + offset;
     }
 }

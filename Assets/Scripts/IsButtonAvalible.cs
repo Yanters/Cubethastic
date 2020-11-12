@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class IsButtonAvalible : MonoBehaviour
 {
-    //public Cheats CH;
-   
+       
     public void Avalible()
     {
-        //PlayerPrefs.GetInt("lvl" + transform.GetComponentInChildren<Text>().text.ToLower()) == 1 || 
-       
+        //Putting shadows on the buttons 'Level x' Grey - ON, Red = OFF
+
         if (PlayerPrefs.GetInt("lvl" + transform.GetComponentInChildren<Text>().text.ToLower()) == 1 || Cheats.IsOn==true)
         {
            
@@ -27,15 +26,10 @@ public class IsButtonAvalible : MonoBehaviour
         }
 
     }
-    // Start is called before the first frame update
+    // When Buttons appear It checks if they are avalible
     void Start()
     {
         Avalible();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Avalible();   
-    }
 }

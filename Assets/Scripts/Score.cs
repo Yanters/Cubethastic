@@ -5,40 +5,26 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    
+
     public Transform player;
     public Transform EndingPoint;
     public Text scoreText;
     public float scoreProcentage;
     public PlayerCollision PC;
-  
 
-  
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    
-
-    // Update is called once per frame
+    // Checing if played collided with something
     void Update()
     {
-        if(!PC.collided)
+        if (!PC.collided)
         {
             scoreProcentage = (((player.position.z) / EndingPoint.position.z) * 100);
         }
-        
-        if (scoreProcentage>=100)
+
+        if (scoreProcentage >= 100)
         {
             scoreProcentage = 100;
-          
-            
-           
         }
-       
-       
-        scoreText.text = scoreProcentage.ToString("0")+"%" ;   
+
+        scoreText.text = scoreProcentage.ToString("0") + "%";
     }
 }
