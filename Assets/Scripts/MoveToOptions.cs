@@ -7,6 +7,6 @@ public class MoveToOptions : MonoBehaviour
 {
    public void ToOptions()
     {
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene("Options");
     }
 }

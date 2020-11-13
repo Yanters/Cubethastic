@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.MenuMusicBool = true;
+        if (AudioManager.MenuMusicWasPlaying != AudioManager.MenuMusicBool)
+        {
+            ChangingAudio.AudioChange();
+            AudioManager.MenuMusicWasPlaying = true;
+        }
+    }
     public void StartGame()
     {
 

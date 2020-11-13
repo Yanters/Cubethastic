@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
         prefsname = SceneManager.GetActiveScene().name;
         lvlcomplete = "lvl" + SceneManager.GetActiveScene().name.ToLower();
         PlayerPrefs.GetInt(lvlcomplete);
@@ -45,6 +46,14 @@ public class GameManager : MonoBehaviour
         HSprefsname = "HS" + SceneManager.GetActiveScene().name;
 
         float HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
+
+        AudioManager.LevelMusicBool = true;
+        if (AudioManager.LevelMusicWasPlaying != AudioManager.LevelMusicBool)
+        {
+            ChangingAudio.AudioChange();
+            AudioManager.LevelMusicWasPlaying = true;
+        }
+
 
     }
 
