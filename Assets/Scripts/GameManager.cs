@@ -47,12 +47,7 @@ public class GameManager : MonoBehaviour
 
         float HSSaveAttempt = PlayerPrefs.GetFloat(HSprefsname);
 
-        AudioManager.MenuMusicBool = false;
-        AudioManager.LevelMusicBool = true;
         ChangingAudio.AudioChange();
-
-
-
     }
 
 

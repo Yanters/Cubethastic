@@ -60,11 +60,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        if(isPlaying(name))
+        if (isPlaying(name))
         {
             s.source.Stop();
         }
-        
+
     }
 
     public bool isPlaying(string name)

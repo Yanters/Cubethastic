@@ -6,12 +6,9 @@ public class Menu : MonoBehaviour
 {
     private void Start()
     {
-        if (!AudioManager.MenuMusicBool)
-        {
-            AudioManager.LevelMusicBool = false;
-            AudioManager.MenuMusicBool = true;
-            ChangingAudio.AudioChange();
-        }
+
+        ChangingAudio.AudioChange();
+
     }
     public void StartGame()
     {
