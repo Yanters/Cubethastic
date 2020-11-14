@@ -8,13 +8,13 @@ public class BackToMenu : MonoBehaviour
     // Swich to scene "Menu"
     private void Start()
     {
-
-        AudioManager.MenuMusicBool = true;
-        if (AudioManager.MenuMusicWasPlaying != AudioManager.MenuMusicBool)
+        if (!AudioManager.MenuMusicBool)
         {
+            AudioManager.LevelMusicBool = false;
+            AudioManager.MenuMusicBool = true;
             ChangingAudio.AudioChange();
-            AudioManager.MenuMusicWasPlaying = true;
         }
+
     }
     public void BackingToMenu()
     {

@@ -7,26 +7,24 @@ public class ChangingAudio : MonoBehaviour
     public static void AudioChange()
     {
 
-        if (AudioManager.MenuMusicBool)
+        if (AudioManager.MenuMusicBool && !AudioManager.MenuMusicWasPlaying)
         {
-            AudioManager.LevelMusicBool = false;
+            Debug.LogWarning("ODPALAM MUZYKE OD MENU");
             AudioManager.LevelMusicWasPlaying = false;
 
             FindObjectOfType<AudioManager>().StopPlay("LevelMusic");
             FindObjectOfType<AudioManager>().Play("MenuMusic");
 
-            AudioManager.MenuMusicBool = true;
             AudioManager.MenuMusicWasPlaying = true;
         }
-        else if (AudioManager.LevelMusicBool)
+        else if (AudioManager.LevelMusicBool && !AudioManager.LevelMusicWasPlaying)
         {
-            AudioManager.MenuMusicBool = false;
+            Debug.LogWarning("ODPALAM MUZYKE OD LEVELU");
             AudioManager.MenuMusicWasPlaying = false;
 
             FindObjectOfType<AudioManager>().StopPlay("MenuMusic");
             FindObjectOfType<AudioManager>().Play("LevelMusic");
 
-            AudioManager.LevelMusicBool = true;
             AudioManager.LevelMusicWasPlaying = true;
         }
 
